@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    image: ctfhub/2024_n1ctf_web_insane_xss
+    environment:
+      - FLAG=flag{dummy_flag}
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: '1G'
